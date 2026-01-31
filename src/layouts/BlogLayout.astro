@@ -1,0 +1,56 @@
+---
+import NavBar from "../components/NavBar.astro";
+import Modal from "../components/Modal.astro";
+import ThemeIcon from "../components/ThemeIcon.astro";
+import '@fontsource/kode-mono';
+import "../styles/global.css";
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Personal web page of AJ Montajes" />
+    <meta
+      name="keywords"
+      content="AJ Montajes, Anthony Joseph Montajes, personal website, home page, UBC, intern, software, developer, portfolio"
+    />
+    <meta name="author" content="AJ Montajes" />
+    <meta property="og:title" content={props.title} />
+    <meta
+      property="og:description"
+      content="Personal web page of AJ Montajes"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://montajes.dev" />
+    <title>{props.title} — AJ</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+        />
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <div
+          style="display: flex; flex-direction: row; align-items: center; row-gap: 10px; justify-content: center; flex-wrap: wrap"
+          >
+        <h3 style="padding-right: 20px">AJ's Blog</h3>
+        <NavBar title={props.title} />
+        <ThemeIcon />
+      </div>
+    </header>
+    <slot />
+    <footer>
+      <a href="/blog" class="arrow">🢨</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+---
+const { project } = Astro.props
+---
+
+<div style="">
+  <div class="projectcard">
+    <h4>{project}</h4>
+    <p style="font-size: 15px">{project}</p>
+  </div>
+</div>
+
+<style>
+
+  .projectcard {
+    background-color: var(--grey);
+    color: var(--pale-blue);
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .projectcard:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+  }
+
+</style>

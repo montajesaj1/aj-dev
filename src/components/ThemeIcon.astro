@@ -1,0 +1,85 @@
+---
+// ThemeToggle.astro
+---
+
+<p class="arrow" id="theme-toggle" aria-label="Toggle theme">
+  <span class="sun-icon">☀</span>
+  <span class="moon-icon">☼</span>
+</p>
+
+<style>
+  #theme-toggle {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    position: relative;
+  }
+
+  #theme-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  .sun-icon,
+  .moon-icon {
+    position: absolute;
+    transition: opacity 0.3s ease;
+  }
+
+  :root[data-theme="light"] .sun-icon {
+    opacity: 1;
+  }
+
+  :root[data-theme="light"] .moon-icon {
+    opacity: 0;
+  }
+
+  :root[data-theme="dark"] .sun-icon {
+    opacity: 0;
+  }
+
+  :root[data-theme="dark"] .moon-icon {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Get theme from localStorage or default to 'light'
+  const getTheme = () => {
+    if (typeof localStorage !== 'undefined') {
+      return localStorage.getItem('theme') || 'light';
+    }
+    return 'light';
+  };
+
+  // Set theme on the document root
+  const setTheme = (theme: string) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('theme', theme);
+    }
+  };
+
+  // Initialize theme on page load
+  const currentTheme = getTheme();
+  setTheme(currentTheme);
+
+  // Add click handler to toggle button
+  const toggleButton = document.getElementById('theme-toggle');
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(newTheme);
+    });
+  }
+
+  // Handle theme on page navigation (for Astro view transitions)
+  document.addEventListener('astro:page-load', () => {
+    const theme = getTheme();
+    setTheme(theme);
+  });
+</script>

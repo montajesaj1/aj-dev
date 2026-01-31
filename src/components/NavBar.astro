@@ -1,0 +1,16 @@
+---
+const title = Astro.props.title;
+import ThemeIcon from "../components/ThemeIcon.astro";
+---
+
+<nav>
+
+  <a href="/" class:list={[{ selected: title == "Home" }]}>[Home]</a>
+ 
+  <a href="/resume" class:list={[{ selected: title == "Resumé" }]}>[Resumé]</a>
+
+  <a href="/projects" class:list={[{ selected: title == "Projects" }]}>[Projects]</a>
+
+  <a href="/blog" class:list={[{ selected: title == "Blog" }]}>[Blog]</a>
+
+</nav>

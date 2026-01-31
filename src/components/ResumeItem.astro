@@ -1,0 +1,32 @@
+---
+import Separator from "./Separator.astro";
+import Modal from "./Modal.astro";
+const props = Astro.props;
+const renderSlot = Astro.slots.has("default");
+---
+<div class="resume-item">
+  <div
+      onclick={`document.getElementById('${props.modal}').showModal()`}
+      style="justify-content: space-between; text-align: left; display: flex; flex-direction: row; align-items: flex-start; row-gap: 10px;"
+  >
+    <div  style="display: flex; flex-direction: row; align-items: top">
+      <img
+        class="resume-icon"
+        src={"../../icons/" + props.icon}
+        alt={props.organization + " Logo"}
+        draggable="false"
+      />
+      <div>
+        <h4 style="margin-top: 20px; margin-bottom: 4px; line-height: 1;">{props.title}</h4>
+        <Modal id={props.modal}>
+          <header>
+            <h3>{props.title} @ {props.organization}</h3>
+          </header>
+          <slot />
+        </Modal>
+      {props.organization}
+      </div>
+    </div>
+    <h4 style="margin-top: 20px; margin-bottom: 4px; line-height: 1;">{props.from} <Separator /> {props.to}</h4>
+  </div>
+</div>

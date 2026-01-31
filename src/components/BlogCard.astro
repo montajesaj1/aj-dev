@@ -1,0 +1,36 @@
+---
+const { post } = Astro.props
+
+const formattedDate = new Intl.DateTimeFormat("en-CA", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  }).format(new Date(post.frontmatter.pubDate))
+  ---
+
+  <div style="width: 18rem;"> 
+    <div class="blogcard">
+      <strong>{post.frontmatter.title}</strong>
+      <p style="font-size:15px" class="date">[{formattedDate}]</p>
+      <hr>
+      <p style="font-size: 15px">{post.frontmatter.description}</p>
+      <a style="float: right; font-size: 15px" href={post.url} class="arrow">[Read]</a>
+    </div>
+  </div>
+
+
+<style>
+  .blogcard {
+    background-color: var(--grey);
+    color: var(--pale-blue);
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .blogcard:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+  }
+
+</style>

@@ -1,0 +1,85 @@
+---
+import NavBar from "../components/NavBar.astro";
+import Modal from "../components/Modal.astro";
+import ThemeIcon from "../components/ThemeIcon.astro";
+import '@fontsource/kode-mono';
+import "../styles/global.css";
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Ron Friedman's personal web page" />
+    <meta
+      name="keywords"
+      content="Ron Friedman, personal website, home page, UBC, intern, software, developer, portfolio"
+    />
+    <meta name="author" content="Ron Friedman" />
+    <meta property="og:title" content={props.title} />
+    <meta
+      property="og:description"
+      content="Ron Friedman's personal web page"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ronf.dev" />
+    <title>{props.title} — AJ</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+        />
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div
+          style="display: flex; flex-direction: row; align-items: center; row-gap: 10px; justify-content: center; flex-wrap: wrap"
+        >
+        <h3 style="padding-right: 20px">AJ's Web</h3>
+        <NavBar title={props.title} />
+        <ThemeIcon />
+
+      </div>
+    </header>
+    <slot />
+    <footer>
+
+
+      <div style="padding-top: 20px; display: flex; align-items: center; justify-content: center">
+        <div style="font-size: 15px">
+          As a settler, I want to acknowledge that I live, work, and learn on the traditional, ancestral, and unceded territories of the
+          <a href="https://musqueam.bc.ca/">xʷməθkʷəy̓əm</a>,
+          <a href="https://squamish.net/">Sḵwx̱wú7mesh</a>, and
+          <a href="https://twnation.ca/">səlilwətaɬ</a>
+          Nations.
+        </div>
+      </div>
+
+      <div style="padding-top: 25px; flex-direction: row; row-gap: 10px; display: flex; align-items: center; justify-content: center">
+        <a href="" style="font-size: 15px; font-family: "Kode Mono", monospace; "> [source code] </a>
+        <a style="font-size: 15px; font-family: "Kode Mono", monospace;"  onclick="document.getElementById('about-modal').showModal()">
+          [contact me]
+        </a>
+
+        <Modal id="about-modal">
+          <header>
+            <h3>Contact Me</h3>
+          </header>
+
+          <p>
+          This reads like a self-contained page.
+          </p>
+        </Modal>
+
+      </div>
+
+    </footer>
+  </body>
+</html>

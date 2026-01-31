@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BlogCard from '../components/BlogCard.astro'
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+---
+<BaseLayout title="Blog">
+  <section class="app-container">
+    <h2 class="section-title">Recent Posts</h2>
+    <div class="posts-grid">
+      {allPosts.map((post) => <BlogCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* Responsive: 2 columns on tablets */
+  @media (max-width: 768px) {
+    .posts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Responsive: 1 column on mobile */
+  @media (max-width: 480px) {
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

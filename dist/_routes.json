@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "include": [
+    "/_server-islands/*"
+  ],
+  "exclude": [
+    "/",
+    "/_astro/*",
+    "/icons/*",
+    "/404",
+    "/blog",
+    "/posts/*",
+    "/projects",
+    "/resume"
+  ]
+}

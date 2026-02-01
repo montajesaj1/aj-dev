@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import ProjectCard from "../components/ProjectCard.astro";
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+import projects from '../data/projects.json';
 ---
 <BaseLayout title="Projects">
   <section class="app-container">
     <h2 class="section-title">Projects</h2>
     <div class="posts-grid">
-      {allPosts.map((post) => <ProjectCard post={post} />)}
+      {projects.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
 </BaseLayout>
@@ -20,7 +20,7 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
     margin-top: 2rem;
   }
 
-  /* Responsive: 2 columns on tablets */
+  /* Responsive: 2 columns on tablets */ 
   @media (max-width: 768px) {
     .posts-grid {
       grid-template-columns: repeat(2, 1fr);

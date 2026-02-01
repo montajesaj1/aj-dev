@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="description" content="Personal web page of AJ Montajes"><meta name="keywords" content="AJ Montajes, Anthony Joseph Montajes, personal website, home page, UBC, intern, software, developer, portfolio"><meta name="author" content="AJ Montajes"><meta property="og:title"><meta property="og:description" content="Personal web page of AJ Montajes"><meta property="og:type" content="website"><meta property="og:url" content="https://montajes.dev"><title> — AJ</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"><script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script><link rel="stylesheet" href="/_astro/blog.-vo4sO70.css"></head> <body> <header> <div style="display: flex; flex-direction: row; align-items: center; row-gap: 10px; justify-content: center; flex-wrap: wrap"> <h3 style="padding-right: 20px">AJ's Blog</h3> <nav> <a href="/">[Home]</a> <a href="/resume">[Resumé]</a> <a href="/projects">[Projects]</a> <a href="/blog">[Blog]</a> </nav> <p class="arrow" id="theme-toggle" aria-label="Toggle theme" data-astro-cid-oemx5le4> <span class="sun-icon" data-astro-cid-oemx5le4>☀</span> <span class="moon-icon" data-astro-cid-oemx5le4>☼</span> </p>  <script type="module">const o=()=>typeof localStorage<"u"&&localStorage.getItem("theme")||"light",t=e=>{document.documentElement.setAttribute("data-theme",e),typeof localStorage<"u"&&localStorage.setItem("theme",e)},m=o();t(m);const n=document.getElementById("theme-toggle");n&&n.addEventListener("click",()=>{const c=document.documentElement.getAttribute("data-theme")==="light"?"dark":"light";t(c)});document.addEventListener("astro:page-load",()=>{const e=o();t(e)});</script> </div> </header> <h1 id="partial-differential-equations-pdes">Partial Differential Equations (PDEs)</h1>
+<h2 id="1-what-is-a-partial-differential-equation">1. What Is a Partial Differential Equation?</h2>
+<p>A <strong>partial differential equation (PDE)</strong> is an equation involving an unknown function of two or more independent variables and its <strong>partial derivatives</strong>.</p>
+<p><strong>General form:</strong>
+[</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">,</mo><mi>u</mi><mo separator="true">,</mo><mi mathvariant="normal">∂</mi><mi>u</mi><mo separator="true">,</mo><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>u</mi><mo separator="true">,</mo><mo>…</mo><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo><mo>=</mo><mn>0</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">F\big(x_1,\dots,x_n, u, \partial u, \partial^2 u, \dots\big)=0,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2141em;vertical-align:-0.35em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="delimsizing size1">)</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span></span></span></span></span>
+<p>]
+where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>=</mo><mi>u</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(u = u(x_1,\dots,x_n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">))</span></span></span></span>.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li>Heat equation: (u_t = \alpha u_{xx})</li>
+<li>Wave equation: (u_{tt} = c^2 u_{xx})</li>
+<li>Laplace equation: (u_{xx} + u_{yy} = 0)</li>
+</ul>
+<hr>
+<h2 id="2-order-and-linearity">2. Order and Linearity</h2>
+<h3 id="order">Order</h3>
+<p>The <strong>order</strong> of a PDE is the highest order derivative appearing in the equation.</p>
+<ul>
+<li>First order: (u_x + u_y = 0)</li>
+<li>Second order: (u_{xx} + u_{yy} = 0)</li>
+</ul>
+<h3 id="linearity">Linearity</h3>
+<p>A PDE is <strong>linear</strong> if the unknown function and its derivatives appear linearly.</p>
+<p><strong>Linear PDE:</strong>
+[
+a_0(x)u + \sum_i a_i(x),u_{x_i} + \sum_{i,j} a_{ij}(x),u_{x_i x_j} = f(x)
+]</p>
+<p><strong>Nonlinear PDE:</strong></p>
+<ul>
+<li>Products or nonlinear functions of (u) or its derivatives appear</li>
+<li>Example: (u_t + u u_x = 0) (inviscid Burgers’ equation)</li>
+</ul>
+<hr>
+<h2 id="3-classification-of-second-order-pdes">3. Classification of Second-Order PDEs</h2>
+<p>For a second-order linear PDE in two variables:
+[
+A u_{xx} + 2B u_{xy} + C u_{yy} + \text{lower-order terms} = 0
+]</p>
+<p>Define the <strong>discriminant</strong>:
+[
+\Delta = B^2 - AC.
+]</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Type</th><th>Condition</th><th>Typical Example</th><th>Physical Meaning</th></tr></thead><tbody><tr><td>Elliptic</td><td>(\Delta &#x3C; 0)</td><td>Laplace</td><td>Equilibrium states</td></tr><tr><td>Parabolic</td><td>(\Delta = 0)</td><td>Heat</td><td>Diffusion</td></tr><tr><td>Hyperbolic</td><td>(\Delta > 0)</td><td>Wave</td><td>Propagation</td></tr></tbody></table>
+<hr>
+<h2 id="4-common-model-equations">4. Common Model Equations</h2>
+<h3 id="41-laplace-equation-elliptic">4.1 Laplace Equation (Elliptic)</h3>
+<p>[
+\nabla^2 u = u_{xx} + u_{yy} = 0
+]</p>
+<ul>
+<li>Describes steady-state phenomena</li>
+<li>Solutions are <strong>harmonic functions</strong></li>
+<li>Maximum principle applies</li>
+</ul>
+<h3 id="42-heat-equation-parabolic">4.2 Heat Equation (Parabolic)</h3>
+<p>[
+u_t = \alpha \nabla^2 u
+]</p>
+<ul>
+<li>Models diffusion of heat or particles</li>
+<li>Exhibits smoothing of initial data</li>
+</ul>
+<h3 id="43-wave-equation-hyperbolic">4.3 Wave Equation (Hyperbolic)</h3>
+<p>[
+u_{tt} = c^2 \nabla^2 u
+]</p>
+<ul>
+<li>Models vibrations and waves</li>
+<li>Finite propagation speed</li>
+</ul>
+<hr>
+<h2 id="5-boundary-and-initial-conditions">5. Boundary and Initial Conditions</h2>
+<p>A PDE problem is incomplete without <strong>auxiliary conditions</strong>.</p>
+<h3 id="initial-conditions-ic">Initial Conditions (IC)</h3>
+<p>Specify the state at an initial time:
+[
+u(x,0) = f(x), \quad u_t(x,0) = g(x).
+]</p>
+<h3 id="boundary-conditions-bc">Boundary Conditions (BC)</h3>
+<ul>
+<li><strong>Dirichlet:</strong> (u = g) on the boundary</li>
+<li><strong>Neumann:</strong> (\partial u / \partial n = g)</li>
+<li><strong>Robin (mixed):</strong> (a u + b \partial u / \partial n = g)</li>
+</ul>
+<hr>
+<h2 id="6-method-of-characteristics-first-order-pdes">6. Method of Characteristics (First-Order PDEs)</h2>
+<p>Used to solve equations of the form:
+[
+a(x,y,u) u_x + b(x,y,u) u_y = c(x,y,u).
+]</p>
+<p>Key idea: reduce the PDE to ODEs along <strong>characteristic curves</strong>:
+[
+\frac{dx}{ds} = a, \quad \frac{dy}{ds} = b, \quad \frac{du}{ds} = c.
+]</p>
+<p>Applications:</p>
+<ul>
+<li>Transport equations</li>
+<li>Conservation laws</li>
+</ul>
+<hr>
+<h2 id="7-separation-of-variables">7. Separation of Variables</h2>
+<p>Assume a solution of the form:
+[
+u(x,t) = X(x)T(t).
+]</p>
+<p>This converts a PDE into separate ODEs:
+[
+\frac{1}{\alpha T} T’ = \frac{1}{X} X” = -\lambda.
+]</p>
+<p>Leads to <strong>eigenvalue problems</strong> and <strong>Fourier series</strong> solutions.</p>
+<hr>
+<h2 id="8-fourier-series-and-eigenfunctions">8. Fourier Series and Eigenfunctions</h2>
+<p>For problems on bounded domains, solutions are expanded as:
+[
+u(x,t) = \sum_{n=1}^\infty a_n e^{-\lambda_n t} \phi_n(x),
+]
+where (\phi_n) are eigenfunctions of a Sturm–Liouville problem.</p>
+<p>Orthogonality:
+[
+\int_a^b \phi_m(x) \phi_n(x),dx = 0 \quad (m \neq n).
+]</p>
+<hr>
+<h2 id="9-well-posedness">9. Well-Posedness</h2>
+<p>A PDE problem is <strong>well-posed</strong> (Hadamard) if:</p>
+<ol>
+<li>A solution exists</li>
+<li>The solution is unique</li>
+<li>The solution depends continuously on the data</li>
+</ol>
+<p>Ill-posed problems are unstable and physically unrealistic.</p>
+<hr>
+<h2 id="10-numerical-methods-overview">10. Numerical Methods (Overview)</h2>
+<p>When analytic solutions are unavailable:</p>
+<ul>
+<li><strong>Finite Difference Methods (FDM)</strong></li>
+<li><strong>Finite Element Methods (FEM)</strong></li>
+<li><strong>Spectral Methods</strong></li>
+</ul>
+<p>Key issues:</p>
+<ul>
+<li>Stability</li>
+<li>Consistency</li>
+<li>Convergence</li>
+</ul>
+<hr>
+<h2 id="11-physical-interpretation">11. Physical Interpretation</h2>
+<p>PDEs encode:</p>
+<ul>
+<li>Conservation laws</li>
+<li>Symmetries of space and time</li>
+<li>Local-to-global behavior of physical systems</li>
+</ul>
+<p>They are foundational in physics, engineering, and applied mathematics.</p>
+<hr>
+<h2 id="12-summary">12. Summary</h2>
+<ul>
+<li>PDEs generalize ODEs to multiple variables</li>
+<li>Classification guides intuition and solution methods</li>
+<li>Boundary and initial conditions are essential</li>
+<li>Exact solutions are rare; structure and approximation matter</li>
+</ul>
+<hr>
+<p><em>End of notes.</em></p> <footer> <a href="/blog" class="arrow">🢨</a> </footer> </body></html>

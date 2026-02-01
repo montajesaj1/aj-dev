@@ -1,0 +1,21 @@
+[
+  {
+    "id": "project-1",
+    "title": "QuantUX Con 2025",
+    "description": "Presented at QUX Con 2025 on how to leverage association rule mining for modelling discrete user choices.",
+    "tags": ["Machine Learning", "Quantitative UXR", "Presentation"]
+  },
+  {
+    "id": "project-2",
+    "title": "YouTube Analytics Platform",
+    "description": "Developed LAAMA, a cloud-based platform for real-time sentiment analysis and categorization of YouTube comments using AWS (Lambda, DynamoDB, S3, SageMaker).",
+    "tags": ["AWS", "Python", "CPSC 436c"]
+  },
+  {
+    "id": "project-3",
+    "title": "Course Data Query Engine",
+    "description": "Architected a full-stack web app for course data retrieval, enabling querying across datasets of various filetypes. Created a REST API using Express.js to interface with a TypeScript backend leveraging the Facade design pattern. Designed a reactive, data-driven dashboard using React, Next.js, and shadcn ui components, implementing full CRUD functionality with Recharts-powered visualizations to enable dynamic data manipulation and insightful result presentation.",
+
+    "tags": ["TypeScript", "React", "CPSC 310"]
+  }
+]

@@ -7,7 +7,7 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
   <section class="app-container">
     <h2 class="section-title">Recent Posts</h2>
     <div class="posts-grid">
-      <!-- {allPosts.map((post) => <BlogCard post={post} />)} --!>
+      {allPosts.map((post) => <BlogCard post={post} />)}
     </div>
   </section>
 </BaseLayout>

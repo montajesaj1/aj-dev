@@ -6,8 +6,10 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 <BaseLayout title="Blog">
   <section class="app-container">
     <h2 class="section-title">Recent Posts</h2>
+    <p>My posts are a collection of the following themes = [essays, opinions, planning, learning]</p>
+    <hr>
     <div class="posts-grid">
-      {allPosts.map((post) => <BlogCard post={post} />)}
+      <!-- {allPosts.map((post) => <BlogCard post={post} />)} -->
     </div>
   </section>
 </BaseLayout>

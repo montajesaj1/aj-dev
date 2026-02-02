@@ -59,7 +59,7 @@ body {
   flex-direction: column;
   margin-left: 25vw;
   margin-right: 25vw;
-  font-size: 20px;
+  font-size: 17px;
   min-height: 95vh;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
@@ -98,8 +98,8 @@ a {
   text-decoration-line: none;
 }
 a:hover {
+  filter: brightness(1.5);
   text-decoration-line: underline;
-  font-style: italic;
 }
 summary {
   color: var(--orange);
@@ -169,4 +169,62 @@ footer {
   margin-top: auto;
   padding: 8px 0;
   text-align: center;
+}
+
+
+/* Markdown tables */
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+article th,
+article td {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--grey);
+  text-align: left;
+  vertical-align: top;
+}
+
+article th {
+  background-color: var(--dark-grey);
+  font-weight: 600;
+  color: var(--orange);
+}
+
+article tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--dark-grey) 90%, transparent);
+}
+
+/* Checkboxes */
+article input[type="checkbox"] {
+  transform: scale(1.1);
+  cursor: default;
+}
+
+/* Prevent long titles from breaking layout */
+article td:first-child {
+  font-weight: 500;
+}
+
+
+/* Code blocks */
+article pre {
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  background: var(--dark-grey);
+}
+
+/* Inline code */
+article :not(pre) > code {
+  padding: 0.15rem 0.35rem;
+  border-radius: 6px;
+  font-size: 0.9em;
+  background: color-mix(in srgb, var(--grey) 85%, transparent);
 }

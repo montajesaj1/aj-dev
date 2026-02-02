@@ -43,12 +43,14 @@ const props = Astro.props;
       <div
           style="display: flex; flex-direction: row; align-items: center; row-gap: 10px; justify-content: center; flex-wrap: wrap"
           >
-        <h3 style="padding-right: 20px">AJ's Blog</h3>
+        <h2 style="padding-right: 20px">AJ's Blog</h2>
         <NavBar title={props.title} />
         <ThemeIcon />
       </div>
     </header>
-    <slot />
+    <article style="font-family: Garamond;" class="prose">
+      <slot />
+    </article>
     <footer>
       <a href="/blog" class="arrow">🢨</a>
     </footer>

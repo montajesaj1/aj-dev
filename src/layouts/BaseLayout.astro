@@ -42,7 +42,7 @@ const props = Astro.props;
       <div
           style="display: flex; flex-direction: row; align-items: center; row-gap: 10px; justify-content: center; flex-wrap: wrap"
         >
-        <h3 style="padding-right: 20px">AJ's Web</h3>
+        <h2 style="padding-right: 20px">AJ's Web</h2>
         <NavBar title={props.title} />
         <ThemeIcon />
 
@@ -50,6 +50,8 @@ const props = Astro.props;
     </header>
     <slot />
     <footer>
+
+      <hr>
 
 
       <div style="padding-top: 20px; display: flex; align-items: center; justify-content: center">
@@ -70,9 +72,10 @@ const props = Astro.props;
 
 
       <div style="padding-top: 25px; flex-direction: row; row-gap: 10px; display: flex; align-items: center; justify-content: center">
-        <a href="https://github.com/montajesaj1/aj-dev/" style="font-size: 15px; font-family: "Kode Mono", monospace; "> [source code] </a>
+        <a href="https://github.com/montajesaj1/aj-dev/" style="font-size: 15px; font-family: "Kode Mono", monospace; "> [source] </a>
+        
         <a style="font-size: 15px; font-family: "Kode Mono", monospace;"  onclick="document.getElementById('about-modal').showModal()">
-          [contact me]
+          [contact]
         </a>
 
         <Modal id="about-modal">

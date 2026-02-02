@@ -14,7 +14,12 @@ const formattedDate = new Intl.DateTimeFormat("en-CA", {
       <p style="font-size:15px" class="date">[{formattedDate}]</p>
       <hr>
       <p style="font-size: 15px">{post.frontmatter.description}</p>
-      <a style="float: right; font-size: 15px" href={post.url} class="arrow">Read ➪</a>
+      <div class="tags">
+        {post.frontmatter.tags.map((tag) => (
+        <span class="tag">[{tag}]</span>
+        ))}
+      </div>
+      <a style="float: right; font-size: 15px" href={post.url} class="arrow">Read More ➪</a>
     </div>
   </div>
 
@@ -29,8 +34,22 @@ const formattedDate = new Intl.DateTimeFormat("en-CA", {
   }
 
   .blogcard:hover {
-    filter: brightness(1.5);
+    filter: brightness(1.1);
     cursor: pointer;
   }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    color: var(--orange);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+
 
 </style>

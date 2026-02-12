@@ -171,7 +171,6 @@ footer {
   text-align: center;
 }
 
-
 /* Markdown tables */
 article table {
   width: 100%;
@@ -208,7 +207,6 @@ article input[type="checkbox"] {
 article td:first-child {
   font-weight: 500;
 }
-
 
 /* Code blocks */
 article pre {

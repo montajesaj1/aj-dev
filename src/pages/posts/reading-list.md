@@ -11,6 +11,8 @@ tags: ["reading"]
 
 ***
 
-| Name | Author | Read? | Rating | Date Finished |
-|------|--------|-------|--------|---------------|
-| Meditations | Marcus Aurelius | [x] | 4/5 | 2026-1-15 |
+| Name        | Author          | Review                                                                                                     | Rating | Date Finished |
+|-------------|-----------------|------------------------------------------------------------------------------------------------------------|--------|---------------|
+| Meditations | Marcus Aurelius | While I found it a little repetitive, the book led me to explore the metaphysical framework for stoicisim. | 4/5    | Jan           |
+| Circe       | Madeline Miller |                                                                                                            | 3.5/5  | Feb           |
+| Kubrick Red | Simon Roy       |                                                                                                            | 4.2/5  | Feb           |

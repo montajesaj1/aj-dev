@@ -53,7 +53,7 @@ h1, h2, h3, h4 {
 body {
   background-color: var(--dark-grey);
   color: var(--pale-blue);
-  font-family: monospace;
+  font-family: "Kode Mono", monospace;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,8 @@ nav {
   font-family: "Kode Mono", monospace;
   font-size: 20px;
   a.selected {
-    text-decoration-line: underline;
+    /* text-decoration-line: underline; */
+    color: var(--orange);
   }
 }
 .arrow {
